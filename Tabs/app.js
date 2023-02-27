@@ -2,13 +2,15 @@ const btns = document.querySelectorAll(".tab-btn");
 const articles = document.querySelectorAll(".content");
 
 btns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const id = e.currentTarget.id;
-    articles.forEach((article) => {
-      article.classList.remove("active");
-      if (article.id === id) {
-        article.classList.add("active");
-      }
+  btn.addEventListener('click', (e) => {
+    btns.forEach(function (btn) {
+      btn.classList.remove("active");
     });
-  });
-});
+    btn.classList.add("active");
+    articles.forEach(function (article) {
+      article.classList.remove("active");
+    });
+    const element = document.querySelector(`.content#${btn.id}`);
+    element.classList.add("active");
+  })
+})

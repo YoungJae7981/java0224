@@ -8,11 +8,33 @@
 <html>
 
 <body>
-  <!-- <p id="p0"></p>
-  <p id="p1"></p>
-  <p id="p2"></p> -->
+  <div id="result"></div>
 
-  <script src="script1.js"></script>
+  <script>
+    const fruits = ['Banana', 'Apple', 'Orange', 'Grape', 'Mango', 'Melon'];
+
+    fruits.forEach((fruit) => {
+      const pElm = document.createElement('p');
+      pElm.innerHTML = fruit;
+      document.body.appendChild(pElm);
+    })
+
+    // // 과일배열만 사용하는법 (백틱사용)
+    // fruits.forEach((fruit, index) => {
+    //   document.querySelector(`#p${index}`).innerHTML = fruit;
+    // })
+
+    // // P태그 배열을 사용하는법
+    // const pArray = document.querySelectorAll('p');
+    // pArray.forEach((pTag, index) => {
+    //   pTag.innerHTML = fruits[index];
+    // })    
+
+    // // 기본방법
+    // document.querySelector('#p0').innerHTML = fruits[0];
+    // document.querySelector('#p1').innerHTML = fruits[1];
+    // document.querySelector('#p2').innerHTML = fruits[2];
+  </script>
 </body>
 
 </html>
